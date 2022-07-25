@@ -6,9 +6,17 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/yamikarajput546/argocd'
+    repoURL: https://github.com/yamikarajput546/argocd
     targetRevision: HEAD
     path: yamls
   destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: argocd
+    server: https://kubernetes.default.svc
+    namespace: myapp
+  
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+     selfHeal: true
+     prune: true
