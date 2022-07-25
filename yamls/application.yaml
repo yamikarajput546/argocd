@@ -1,0 +1,8 @@
+project: default
+source:
+  repoURL: 'https://github.com/yamikarajput546/argocd'
+  path: yamls
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: argocd
